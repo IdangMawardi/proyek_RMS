@@ -101,24 +101,24 @@
                 <form action="/shop/contact/" method="POST">{% csrf_token %}
                   <div class="form-group mt-3">
                       <b><label for="name">Name:</label></b>
-                      <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name" required>
+                      <input type="text" class="form-control" id="name" name="name" placeholder="" required>
                   </div>
                   <div class="form-group mt-3">
                       <b><label for="email">Email:</label></b>
-                      <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email" required>
+                      <input type="email" class="form-control" id="email" name="email" placeholder="" required>
                   </div>
                   <div class="form-group mt-3">
                       <b><label for="phone">Phone No:</label></b>
                       <div class="input-group mb-3">
                           <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon">+91</span>
+                            <span class="input-group-text" id="basic-addon">+62</span>
                           </div>
-                          <input type="tel" class="form-control" id="phone" name="phone" aria-describedby="basic-addon" placeholder="Enter Your Phone Number" required pattern="[0-9]{10}">
+                          <input type="tel" class="form-control" id="phone" name="phone" aria-describedby="basic-addon" placeholder="" required pattern="[0-9]{10}">
                       </div>
                   </div>
                   <div class="form-group mt-3">
                     <b><label for="desc">Message:</label></b>
-                    <textarea class="form-control" id="desc" name="desc" rows="2" required minlength="6" placeholder="How May We Help You ?"></textarea>
+                    <textarea class="form-control" id="desc" name="desc" rows="2" required minlength="6" placeholder=""></textarea>
                   </div>
                     <button type="submit" class="btn btn-danger-gradiant text-white border-0 py-2 px-3"><span> SUBMIT NOW <i class="ti-arrow-right"></i></span></button>
                 </form>

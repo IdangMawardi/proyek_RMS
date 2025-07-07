@@ -102,7 +102,7 @@ $('#trackerForm').submit(function(event) {
                 for (i = 0; i < updates.length; i++) {
                     let text = updates[i]['text'];
                     let time = updates[i]['time'];
-                    var s = new Date(time).toLocaleString(undefined, {timeZone: 'Asia/Kolkata'}); 
+                    var s = new Date(time).toLocaleString(undefined, {timeZone: 'Asia/Jakarta'}); 
                     mystr = `<li class="list-group-item d-flex justify-content-between align-items-center">${text}<span class="badge badge-primary badge-pill">${s}</span></li>`
                     $('#items').append(mystr);
                 }

@@ -1,8 +1,7 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.http import HttpResponseRedirect
 
-# I have created this file - Darshan
-# from django.http import HttpResponse
+
 from .models import Product, Contact, Orders, OrderUpdate
 from django.contrib.auth.models import User
 from django.contrib import messages
@@ -23,8 +22,8 @@ def index(request):
         n = len(prod)
         nSlides = n // 4 + ceil((n / 4) - (n // 4))
         allProds.append([prod, range(1, nSlides), nSlides])
-    darshan = {'allProds': allProds}
-    return render(request, 'shop/index.html', darshan)
+    dude = {'allProds': allProds}
+    return render(request, 'shop/index.html', dude)
     # return HttpResponse("<h1 align='center'> <font color='#FF0000' size='9' > Welcome Our Restaurant </font> </h1>")
 
 
@@ -102,10 +101,10 @@ def search(request):
         nSlides = n // 4 + ceil((n / 4) - (n // 4))
         if len(prod) != 0:
             allProds.append([prod, range(1, nSlides), nSlides])
-    darshan = {'allProds': allProds, "msg": ""}
+    dude = {'allProds': allProds, "msg": ""}
     if len(allProds) == 0 or len(query) < 3:
-        darshan = {'msg': "No item available. Please make sure to enter relevant search query"}
-    return render(request, 'shop/search.html', darshan)
+        dude = {'msg': "No item available. Please make sure to enter relevant search query"}
+    return render(request, 'shop/search.html', dude)
 
 
 def checkout(request):
@@ -128,7 +127,7 @@ def checkout(request):
         id = order.order_id
         if 'onlinePay' in request.POST:
             # Request paytm to transfer the amount to your account after payment by user
-            darshan_dict = {
+            dude_dict = {
 
                 'MID': 'WorldP64425807474247',  # Your-Merchant-Id-Here
                 'ORDER_ID': str(order.order_id),
@@ -140,8 +139,8 @@ def checkout(request):
                 'CALLBACK_URL': 'http://127.0.0.1:8000/shop/handlerequest/',
 
             }
-            darshan_dict['CHECKSUMHASH'] = Checksum.generate_checksum(darshan_dict, MERCHANT_KEY)
-            return render(request, 'shop/paytm.html', {'darshan_dict': darshan_dict})
+            dude_dict['CHECKSUMHASH'] = Checksum.generate_checksum(dude_dict, MERCHANT_KEY)
+            return render(request, 'shop/paytm.html', {'dude_dict': dude_dict})
         elif 'cashOnDelivery' in request.POST:
             return render(request, 'shop/checkout.html', {'thank': thank, 'id': id})
     return render(request, 'shop/checkout.html')
